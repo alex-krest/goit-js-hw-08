@@ -5,7 +5,6 @@ const refs = {
   messageEl: document.querySelector('.feedback-form textarea'),
   submitEl: document.querySelector('.feedback-form button'),
 };
-console.log(refs.submitEl);
 const LOCALSTORAGE_KEY = 'feedback-form-state';
 
 const formData = {};
@@ -30,6 +29,7 @@ function onFormInput(e) {
 function onFormSubmit(e) {
   e.preventDefault();
   if (refs.emailEl.value === '' || refs.messageEl.value === '') {
+    alert('Please fill in all fields of the form');
     return;
   }
   console.log(formData);
